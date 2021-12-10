@@ -13,6 +13,7 @@ Please make sure that all of theses commands have been performed on your raspber
 5. pip3 install beautifulsoup4
 6. pip3 install webdriver-manager
 7. pip3 install adafruit-circuitpython-dht
+8. pip3 install requests
 
 Now open raspberry_pi.py and run. Make sure that WebScraper.py is located in the same folder.
 
