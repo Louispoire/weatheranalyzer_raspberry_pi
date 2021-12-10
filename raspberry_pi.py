@@ -50,11 +50,11 @@ while True:
             print("Temperature: " + str(temperature) + " | Humidity: " + str(humidity))
             result = SendRequest(temperature)
             if result == "error":
-            print("Error. Request could not be sent")
+                print("Error. Request could not be sent")
             elif result == "Bad request":
-            print("Request was sent but failed")
+                print("Request was sent but failed")
             elif result == "OK":
-            print("Request was sucessfully sent!")
+                print("Request was sucessfully sent!")
             time.sleep(5)
     except RuntimeError:
         print("Runtime error has occured. This is generally due to the sensor failing")
