@@ -14,6 +14,7 @@ def CalculateCurrentTemperature():
     temperature = dht_device.humidity
     return temperature, humidity
 
+# this method here is used to send a POST request 
 def SendRequest(p):
     try:
         print("Commencing temperature transfer...")
