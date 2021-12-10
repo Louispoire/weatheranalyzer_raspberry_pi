@@ -4,7 +4,7 @@ Python code used by Raspberry Pi 4 to get temperature from a DHT22 sensor and se
 
 Installation guide
 
-Please make sure that all of theses commands have been performed on your raspberry pi
+Please make sure that all of these commands have been performed on your raspberry pi
 
 1. sudo apt update
 2. sudo apt upgrade
@@ -15,8 +15,8 @@ Please make sure that all of theses commands have been performed on your raspber
 7. pip3 install adafruit-circuitpython-dht
 8. pip3 install requests
 
-Now open raspberry_pi.py and run. Make sure that WebScraper.py is located in the same folder.
+Now, open raspberry_pi.py and run. Make sure that WebScraper.py is located in the same folder.
 
-**If you have DHT11, please change sensor accordingly. 
+**If you have DHT11, please change sensor name accordingly**. 
 
 Enjoy!
