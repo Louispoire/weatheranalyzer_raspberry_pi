@@ -14,16 +14,14 @@ def CalculateCurrentTemperature():
     temperature = dht_device.humidity
     return temperature, humidity
 
-# this method here is used to send a POST request 
 def SendRequest(p):
     try:
         print("Commencing temperature transfer...")
-        #meteomedia = scraper.get_current_temp_from_meteomedia()
-        #weathercom = scraper.get_current_temp_from_weathercom()
-        temp = { 'temp': 22, 'tempWeatherCom': 20, 'tempMeteoMedia': 20 }
-        post_request = requests.post('https://weatheranalyser.pythonanywhere.com/', data=temp)
+        meteomedia = scraper.get_current_temp_from_meteomedia()
+        weathercom = scraper.get_current_temp_from_weathercom()
+        temp = { 'temp': p, 'tempWeatherCom': 20, 'tempMeteoMedia': 20 }
+        post_request = requests.post('http://weatheranalyser.pythonanywhere.com', json=temp)
         print(post_request.text)
-        
         if post_request.status_code == requests.codes.ok:
             return "OK"
         else:
@@ -31,20 +29,15 @@ def SendRequest(p):
     except Exception:
         return "error"
     
-
-
 while True:
     try:
         print("go")
         # Temp/Humi
         humidity = dht_device.humidity
         temperature = dht_device.temperature
-
-        # results = precision_calculator(meteomedia, weather, temperature)
-        # status = results[0]
-        # precision = results[1]
-        # print(status + " " + str(precision) + "%")
+        
         if temperature == None:
+            time.sleep(5)
             continue
         else:
             print("Temperature: " + str(temperature) + " | Humidity: " + str(humidity))
